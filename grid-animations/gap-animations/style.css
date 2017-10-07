@@ -1,0 +1,28 @@
+.container {
+  float: left;
+  display: grid;
+  width: 100px;
+  height: 400px;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 0px;
+  transition: grid-gap 1s;
+}
+
+.container.active {
+  grid-gap: 50px;
+}
+
+.subgrid {
+  display: subgrid;
+}
+
+.subgrid .grid-item {
+  width: 100%;
+  height: 100%;
+  outline: 1px solid #ccc;
+}
+
+.grid-item {
+  transition: background-color 1s;
+}
