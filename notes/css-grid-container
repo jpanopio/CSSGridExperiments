@@ -1,0 +1,95 @@
+CSS Grid Layout Notes
+
+- Easy way to align elements into columns and rows
+- Unlike tables, grid items can overlap and layer over each other
+
+Diagram of a Grid
+- Grid Container - Element on which "display: grid" is applied
+- Grid Item - Direct descendants of grid container, different from Grid Cell
+- Grid Line - Dividing lines that make up the grid structure
+- Grid Track - Space between grid lines (columns and rows)
+- Grid Cell - Space between two adjacent row and two adjacent column lines
+- Grid Area - Space surrounded by four grid lines
+
+To create a grid container, use "display: grid"
+- Rows and columns are configured by "grid-template-columns" and "grid-template-rows"
+- Configuration includes "track size" and "line name"
+  - Track size can be a length, percentage, or fraction of free space in the grid (fr unit)
+  - Line name allows you to specifically name each row/column
+    - You can use these names to refer to specific rows and columns when writing the CSS for grid items
+    - If no names are provided, grid lines are automatically assigned numerical names (1 - n)
+    - Grid lines can have multiple names
+
+Example of naming:
+.container {
+  display: grid;
+
+  grid-template-columns:
+    [content-start] 2fr
+    [content-end content-side-start] 1fr
+    [content-side-end side-start] 15% [side-end];
+
+  grid-template-rows:
+    [header-start] 50px
+    [header-end content-start] 150px
+    [content-end footer-start] 50px [footer-end];
+}
+
+Example of Grid Items using defined names:
+.header {
+  grid-column: content-start / content-side-end;
+  grid-row: header-start / header-end;
+}
+
+There is a repeat() notation to simplify row/column configuration
+- Example:
+.container {
+  grid-template-columns: repeat(3, 20px [col-start]) 5%;
+}
+
+There is a new unit of measurement: fr
+- fr represents a fraction of the free space in a grid container
+- Example:
+.container {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+- If there are any other size units affecting the grid space, fr will be calculated after
+- Example:
+.container {
+  grid-template-columns: 1fr 50px 1fr 1fr;
+}
+
+
+Grid Template Areas
+- You can use this to define a grid template by referencing Grid Items that have a "grid-area" property
+- A period is used to denote empty cells
+- Example:
+.item-a {
+  grid-area: header;
+}
+.item-b {
+  grid-area: main;
+}
+.item-c {
+  grid-area: sidebar;
+}
+.item-d {
+  grid-area: footer;
+}
+
+.container {
+  grid-template-columns: 50px 50px 50px 50px;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header header header header"
+    "main main . sidebar"
+    "footer footer footer footer";
+}
+- Using this syntax automatically names the grid lines around the area
+  - In the example, this means that lines would be named "header-start" or "header-end"
+  - This ALSO means that some grid lines will have multiple names
+
+"grid-column-gap" and "grid-row-gap" can be used to set the size of grid lines
+
+The grid container can configure the row and column alignment of the grid items
+- "justify-items" and "align-items"

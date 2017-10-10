@@ -1,0 +1,32 @@
+grid-column and grid-row are shorthands for grid-column-start, grid-column-end, etc.
+- Example:
+.item-c {
+  grid-column: 3 / span 2;
+  grid-row: third-line / 4;
+}
+
+For Grid Items, grid-area can be a shorthand for grid-column-start, grid-column-end, etc.
+- Example:
+.item-d {
+  grid-area: 1 / col4-start / last-line / 6
+}
+
+For Grid Containers, there is a "grid-template" shorthand property
+- Combines grid-template-rows, grid-template-columns, and grid-template-areas
+- Can use: grid-template: <subgrid_name>
+  - This means if the container is itself an item in another grid container, it will inherit the container's grid configuration
+- Can use: grid-template: <grid-template-rows> / <grid-template-columns>
+- There is a complex syntax that accepts all 3:
+.container {
+  grid-template:
+    [row1-start] "header header header" 25px [row1-end]
+    [row2-start] "footer footer footer" 25px [row2-end]
+    / auto 50px auto;
+}
+
+For grid lines, there's a shorthand for settings the width: "grid-gap"
+- grid-gap: <grid-row-gap> <grid-column-gap>
+- Example:
+.container{
+  grid-gap: 10px 15px;
+}

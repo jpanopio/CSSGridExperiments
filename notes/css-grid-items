@@ -1,0 +1,31 @@
+Four properties determine an item's location within a grid
+- grid-column-start
+- grid-column-end
+- grid-row-start
+- grid-row-end
+  - These properties are relative to the Grid Lines
+
+The possible value types for the aforementioned properties are
+- <line> - Either a number or named Grid Line
+- span <number> (ex: span 3) - Specifies how many tracks a grid item should cover
+- span <name> - An item spans across tracks until a line with <name>
+- auto
+- Example:
+.item-a {
+  grid-column-start: 2;
+  grid-column-end: five;
+  grid-row-start: row1-start
+  grid-row-end: 3
+}
+
+Without grid-column-end/grid-row-end, the item spans 1 track by default
+
+Items can overlap each other -- z-index can be used to control stacking order
+
+Items have a "grid-area" property that can be used for two purposes:
+- Allows it to be referenced by grid templates' "grid-template-areas" properties
+- Can be used as a shorthand for "grid-row-start", "grid-column-start", etc.
+
+Items have alignment properties
+- "justify-self" for row alignment
+- "align-self" for column alignment  
