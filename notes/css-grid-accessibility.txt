@@ -6,3 +6,5 @@ Use grid layout for visual reordering of content, not logical reordering
 - In this scenario, the markup should be changed instead of the grid layout styling
 
 When developing a page with grid layout, ensure that tab order makes sense
+
+When developing a page with grid layout, don't sacrifice semantic HTML for easier grid configuration
