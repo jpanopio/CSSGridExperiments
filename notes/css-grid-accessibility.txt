@@ -1,0 +1,8 @@
+While you can make grid items appear out of order, it doesn't affect screen readers or tab order
+- This means that a user can potentially tab from the top to the bottom of the screen
+
+Use grid layout for visual reordering of content, not logical reordering
+- An example of this is if tab traversal of grid items is out of order
+- In this scenario, the markup should be changed instead of the grid layout styling
+
+When developing a page with grid layout, ensure that tab order makes sense

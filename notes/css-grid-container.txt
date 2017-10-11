@@ -93,3 +93,38 @@ Grid Template Areas
 
 The grid container can configure the row and column alignment of the grid items
 - "justify-items" and "align-items"
+
+There are properties for handling when the total size of a grid is smaller than a grid container
+- The alignment of the grid can be configured with "justify-content" and "align-content"
+- These properties can also configure spacing between grid items
+  - "space-around" places even amounts of space between each grid items and includes half-sized spaces on the far ends
+  - "space-between" places even amount of space between grid items with no space at far ends
+  - "space-evenly" puts an event amount of space between grid items, including the far ends
+
+There may be cases where grid items are told to start/end on undefined columns or rows
+- This creates "Implicit Tracks" with width 0 to fill in the gaps
+- It is possible to configure the size of implicit tracks
+  - "grid-auto-columns"
+  - "grid-auto-rows"
+- Example:
+.container {
+  grid-template-columns: 60px 60px;
+  grid-template-rows: 90px 90px
+}
+
+.item-a {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+.item-b {
+  grid-column: 5 / 6;
+  grid-row: 2 / 3;
+}
+
+When there are grid items without specified positions, an "Auto-placement Algorithm" places them for you
+- "grid-auto-flow" is a property to control how the algorithm behaves
+- Values for "grid-auto-flow":
+  - "row" - Fills in row by row, adds rows as needed
+  - "column" - Fills in column by column, adds columns as needed
+  - "dense" - If there are "holes" in the grid, small items will be placed in them
+    * This may cause the items to appear out of order

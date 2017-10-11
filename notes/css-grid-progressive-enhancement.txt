@@ -1,0 +1,4 @@
+In IE/Edge, the grid layout properties need an "-ms" prefix
+
+If a float is added to a grid item, it will be overridden
+- The fact that the item is a grid item takes precedence
