@@ -1,0 +1,21 @@
+.area-example {
+  grid-area: bigblue;
+  background-color: blue;
+}
+
+.container {
+  width: 500px;
+  height: 500px;
+  border: 10px solid #000;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "bigblue bigblue . ."
+    "bigblue bigblue . ."
+    "bigblue bigblue . ."
+    "bigblue bigblue . .";
+}
+
+.item {
+  border: 10px solid #000;
+}
