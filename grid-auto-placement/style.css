@@ -1,0 +1,40 @@
+.container {
+/*   grid-auto-flow: column; */
+}
+
+.item.a {
+  grid-row: 1 / 2;
+  grid-column: 1 / 6;
+}
+
+.item.h {
+  grid-row: 4 / 5;
+  grid-column: 1 / 6;
+}
+
+.container {
+  width: 1000px;
+  height: 500px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 40px;
+  background-image: url('http://vignette3.wikia.nocookie.net/brumama/images/5/50/Wiki-background/revision/latest?cb=20150101162739');
+  background-position-y: 20%;
+}
+
+.item {
+  width: 100%;
+  height: 100%;
+  background-image: url('https://vignette2.wikia.nocookie.net/mario/images/f/f6/Question_Block_Art_-_New_Super_Mario_Bros.png/revision/latest?cb=20120603213532');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.item.a, .item.h {
+  background-image: url('https://vignette4.wikia.nocookie.net/nintendo/images/6/63/Brick_Block.png/revision/latest?cb=20151206062204&path-prefix=en');
+  background-size: contain;
+  background-repeat: initial;
+  background-position: initial;
+}
