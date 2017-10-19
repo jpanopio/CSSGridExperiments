@@ -1,0 +1,32 @@
+/* Alignment */
+.container {
+  justify-items: center;
+  align-items: center;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.item {
+/*   justify-self: end; */
+/*   align-self: end; */
+}
+
+
+/* Grid + Appearance */
+.container {
+  width: 600px;
+  height: 600px;
+  border: 2px solid #6db8f9;
+  border-radius: 4%;
+  display: grid;
+  background-color: #70d8ff;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(4, 100px);
+}
+
+.item {
+  width: 45px;
+  height: 45px;
+  background: url('https://cdn.iconscout.com/public/images/icon/free/png-512/pokemon-pokeball-game-go-3d4d7b6a9453829b-512x512.png');
+  background-size: contain;
+}
