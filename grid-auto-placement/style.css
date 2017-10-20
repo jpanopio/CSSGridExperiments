@@ -1,13 +1,16 @@
 .container {
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 40px;
 /*   grid-auto-flow: column; */
 }
 
-.item.a {
+.item.top {
   grid-row: 1 / 2;
   grid-column: 1 / 6;
 }
 
-.item.h {
+.item.bottom {
   grid-row: 4 / 5;
   grid-column: 1 / 6;
 }
@@ -16,9 +19,6 @@
   width: 1000px;
   height: 500px;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  grid-gap: 40px;
   background-image: url('http://vignette3.wikia.nocookie.net/brumama/images/5/50/Wiki-background/revision/latest?cb=20150101162739');
   background-position-y: 20%;
 }
@@ -32,7 +32,7 @@
   background-position: center;
 }
 
-.item.a, .item.h {
+.item.top, .item.bottom {
   background-image: url('https://vignette4.wikia.nocookie.net/nintendo/images/6/63/Brick_Block.png/revision/latest?cb=20151206062204&path-prefix=en');
   background-size: contain;
   background-repeat: initial;
